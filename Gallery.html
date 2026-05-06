@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Gallery | Portfolio </title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+    body {
+    background-color: #1a1a1a;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    color: rgb(255, 255, 255);
+    transition: background-image 1.5s ease-in-out; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ .overlay {
+            background-color: rgba(0, 0, 0, 0.5); 
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+ }       
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+ .link-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 12px;
+        }
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+    <div class="container py-5">
+
+    <h1 class="text-center mb-5">My Gallery</h1>
+
+    <div class="row g-4 gallery">
+
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1bfpPqdz1867_mLeJXVYMmouR2ale6DA4/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/15lq4Bzl3BXGxp2f7dqIY92C9Lax0b-Gk/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1NqkUYNy__MVPJqJkvG55n8LgW8Jf-jQs/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1DvTaDM2AIF_kc7W9EljOLhy6B0TmY3jl/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1qWdZGH7ie8W_FcoRLNgJy58dNjLv46_Z/preview" width="640" height="480"></iframe>
+        </div>
+            
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1TCBswHAMQJI9wFequP4pkj6SEHU_wiu6/preview" width="640" height="480"></iframe>
+        </div>
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/16t665kKoeku6j8xTErAlyL2c63fbr1Bh/preview" width="640" height="480"></iframe>
+        </div>
+     
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1SYIdbMdvDRQyezg8bxP-Kxmj07UIvNbu/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1Sg6Ii2I1c6wRuIHgw3_pBRLUEOy2-7Kp/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1SmpIp7urHKcZdV-2u8Ph4Z8DSkiFselT/preview" width="640" height="480"></iframe>
+        </div>
+
+        <div class="col-md-0 d-flex justify-content-center">
+            <iframe src="https://drive.google.com/file/d/1Q7l5o3_o-HWhkmpcPYmvDbl6tEhvYCut/preview" width="640" height="480"></iframe>
+        </div>
+  
+    </div>
+
+     <div class="text-center section">
+        <a href="index.html" class="btn rounded-pill link-btn">Back to Home</a>
+    
+    </div>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<script>
+    const images = [
+        'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1659968026465-c5ded74ed038?auto=format&fit=crop&w=1920&q=80',
+        'https://images.unsplash.com/photo-1637167473291-9f8caf792ded?auto=format&fit=crop&w=1920&q=80',
+    ];
+
+    let currentIndex = 0;
+
+    function changeBackground() {
+        // Set background image
+        document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+        
+        // Cycle index
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    // Run once on load
+    changeBackground();
+
+    // Change every 5 seconds
+    setInterval(changeBackground, 5000);
+</script>
+
+
+</body>
+</html>
